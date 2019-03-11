@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import './App.css'
 import cardBack from './card-back.png';
-import bodyBg from './wood_pattern.png';
+import Background from './wood_pattern.png';
+
 
 import axios from 'axios'
 
