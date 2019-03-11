@@ -1,33 +1,121 @@
-.App {
+html { 
+  font-family: sans-serif;
+
+}
+
+h1 {
   text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  animation: slide-up 1s ease;
+  font-size: 74px;
+  color: #c12427;
+  text-shadow: 0 1px 0  white, 
+  0 3px 0  white, 
+  0 20px 20px rgba(0,0,0,.15)
+
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+flex-wrap: wrap;
+text-align: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 10px;
+  padding-bottom: 30px;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+  width:100%;
+max-width: 30%;
+margin:5px;
+  width: 180px; 
+  height: 250px;
+  perspective: 470px;
+  border-radius: 3px;
+  animation: slide-up 0.5s ease;
+  transition-property: all;
+
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card-img{
+  width:100%;
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%; height: auto;
+  transition: transform 4s;
+  backface-visibility:hidden;
+  box-shadow: 5px 5px 5px grey;
+  border-radius: 9px;
+  background-color:#c12427;
+  transition-delay: 4s;
+  
+}
+
+
+
+.flip-card-front {
+  transform: rotateY(180deg);
+  transition-delay: 2s; 
+}
+
+.flip-card-back {
+  transform: rotateY(360deg);
+  transition-delay: 4s; 
+}
+
+.message {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 10px;
+  animation: slide-up 1s ease;
+  color: gray;
+  font-family: 'Josefin Sans', sans-serif;
+
+
+}
+
+/* .card:hover .front{ transform: rotateY(180deg); }
+.card:hover .back { transform: rotateY(360deg); } */
+
+.deal-cards-btn {
+background-color:#c12427;
+-moz-border-radius:38px;
+-webkit-border-radius:38px;
+border-radius:38px;
+display:inline-block;
+cursor:pointer;
+color:#ffffff;
+font-family: 'Josefin Sans', sans-serif;
+font-size:17px;
+padding:16px 31px;
+text-decoration:none;
+box-shadow: 0 1px 0  white, 
+0 3px 0  white, 
+0 20px 20px rgba(0,0,0,.15);
+animation: slide-up 1s ease;
+}
+
+
+
+.card-control-panel {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+@keyframes slide-up {
+  0% {
+      opacity: 0;
+      transform: translateY(60px);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+      opacity: 1;
+      transform: translateY(0);
   }
 }
